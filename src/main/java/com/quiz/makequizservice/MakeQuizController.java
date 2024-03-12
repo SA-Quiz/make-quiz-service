@@ -18,7 +18,7 @@ public class MakeQuizController {
 	@GetMapping("/getquiz")
 	public String getquiz() {
 		return "Get a quiz";
-	}git
+	}
 
 	@CrossOrigin
 	@GetMapping("/deletequiz")
