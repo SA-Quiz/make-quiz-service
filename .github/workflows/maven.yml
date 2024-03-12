@@ -34,8 +34,3 @@ jobs:
       run: |
         docker-compose build 
         docker-compose up -d 
-    
-    - name: Stop Docker containers after time delay
-      run: 
-        sleep 30
-        docker-compose down
