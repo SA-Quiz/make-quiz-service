@@ -5,7 +5,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import com.quiz.makequizservice.MakeQuizController;
 
 @SpringBootTest
-public class MakeQuizTest {
+class MakeQuizTest {
     @Test
     void makeQuiz() {
         MakeQuizController makeQuizController = new MakeQuizController();
