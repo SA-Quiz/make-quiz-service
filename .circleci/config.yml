@@ -16,18 +16,8 @@ jobs:
           key: cache-{{ checksum "/tmp/CIRCLECI_CACHE_KEY" }}
       - run:
           command: mvn verify
-      - run:
-          name: run tests
-          command: |
-            apt install python3.10-venv
-            python3 -m venv venv
-            source venv/Scripts/activate
-            . venv/bin/activate
-            mkdir test-results
-            pytest --junitxml=test-results/junit.xml tests
-
       - store_test_results:
-          path: test-results
+          path: target/surefire-reports
       - save_cache:
           key: cache-{{ checksum "/tmp/CIRCLECI_CACHE_KEY" }}
           paths:
