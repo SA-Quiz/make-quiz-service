@@ -19,6 +19,8 @@ jobs:
       - run:
           name: run tests
           command: |
+            python3 -m venv venv
+            source venv/Scripts/activate
             . venv/bin/activate
             mkdir test-results
             pytest --junitxml=test-results/junit.xml tests
