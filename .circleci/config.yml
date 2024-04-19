@@ -16,8 +16,15 @@ jobs:
           key: cache-{{ checksum "/tmp/CIRCLECI_CACHE_KEY" }}
       - run:
           command: mvn verify
+      - run:
+          name: run tests
+          command: |
+            . venv/bin/activate
+            mkdir test-results
+            pytest --junitxml=test-results/junit.xml tests
+
       - store_test_results:
-          path: test_results
+          path: test-results
       - save_cache:
           key: cache-{{ checksum "/tmp/CIRCLECI_CACHE_KEY" }}
           paths:
