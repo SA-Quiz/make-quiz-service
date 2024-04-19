@@ -27,6 +27,7 @@ jobs:
   deploy:
     docker:
       - image: circleci/python:3.7
+    context: Quiz-app
     steps:
       - checkout
       - setup_remote_docker
